@@ -94,6 +94,10 @@ ALTER TABLE Armazen ADD CONSTRAINT FK_Armazem_2
 -- Adicionando o status de check para definir como 'A' para ativo e 'I' para inativo 
 ALTER TABLE Usuario
 	ADD CONSTRAINT Status CHECK (Status IN ('A','I'));
+
+-- Adicionando as opções de cargo que o usuário pode ocupar
+ALTER TABLE Usuario
+	ADD CONSTRAINT Cargo CHECK (Cargo IN ('Administrador','Estoquista','Gerente'));
  
 -- Adicionando a coluna para definir a característica do produto de check para definir como 'S' para sim e 'N' para não 
 ALTER TABLE Produto 
